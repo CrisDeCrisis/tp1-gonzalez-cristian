@@ -9,6 +9,10 @@ export class Equipo implements ICompetidor {
     this.nombre = nombre;
   }
 
+  get cantidad() {
+    return this.jugadores.length;
+  }
+
   agregarJugador(jugador: Jugador): void {
     this.jugadores.push(jugador.nombre);
   }
@@ -17,5 +21,9 @@ export class Equipo implements ICompetidor {
     return this.jugadores;
   }
 
-  toString(): void {}
+  toString(): void {
+    console.log(`\nNombre del equipo: ${this.nombre}
+Jugadores: ${this.jugadores.join(", ")}
+    `);
+  }
 }
