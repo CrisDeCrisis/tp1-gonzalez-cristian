@@ -3,7 +3,7 @@ import type { Equipo } from "./Equipo.js";
 
 export class Futbol extends Deporte {
   constructor() {
-    super("Futbol", 11);
+    super("Fútbol", 11);
   }
 
   validar(equipo: Equipo): boolean {
