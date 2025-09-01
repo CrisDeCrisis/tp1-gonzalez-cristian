@@ -10,6 +10,10 @@ export class Partido implements IIdentificador {
   public resultado?: string = "Próxima fecha";
 
   constructor(local: string, visitante: string, deporte: TDeporte) {
+    if (local === visitante) {
+      throw new Error("El equipo local y el visitante deben ser distintos.");
+    }
+
     this.local = local;
     this.visitante = visitante;
     this.deporte = deporte;

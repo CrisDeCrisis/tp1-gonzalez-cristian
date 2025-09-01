@@ -22,8 +22,9 @@ export class Equipo implements ICompetidor {
   }
 
   toString(): void {
-    console.log(`\nNombre del equipo: ${this.nombre}
-Jugadores: ${this.jugadores.join(", ")}
+    console.log(`
+    Nombre del equipo: ${this.nombre}
+    Jugadores: ${this.jugadores.join(", ")}
     `);
   }
 }
