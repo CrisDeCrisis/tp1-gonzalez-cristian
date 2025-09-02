@@ -14,6 +14,9 @@ export const jugadoresFutbol: Record<string, Jugador[]> = {
     new Jugador("Marcelo Delgado", 29, "Delantero"),
     new Jugador("Martín Palermo", 31, "Delantero"),
     new Jugador("Guillermo Barros Schelotto", 32, "Delantero"),
+    // En caso de probar validacion por cupo de equipo
+    // Descomentar la linea de abajo, y volver a ejecutar el flujo
+    // new Jugador("Carlos Tevez", 20, "Delantero"),
   ],
   "River Plate": [
     new Jugador("Germán Lux", 23, "Arquero"),

@@ -1,5 +1,7 @@
 import type { IIdentificador } from "../interfaces/IIdentificable.js";
 import type { Partido } from "./Partido.js";
+import { Futbol } from "./Futbol.js";
+import { Basquet } from "./Basquet.js";
 import { v7 as uuidv7 } from "uuid";
 
 export class Torneo implements IIdentificador {
@@ -12,6 +14,27 @@ export class Torneo implements IIdentificador {
   }
 
   programarPartido(partido: Partido) {
+    // Validar cupo de jugadores antes de programar el partido
+    const deporte = partido.deporte;
+    let validador;
+
+    if (deporte === "Futbol") {
+      validador = new Futbol();
+    } else if (deporte === "Basquet") {
+      validador = new Basquet();
+    } else {
+      throw new Error("Deporte no soportado para validación de cupo");
+    }
+
+    if (
+      !validador.validar(partido.local) ||
+      !validador.validar(partido.visitante)
+    ) {
+      throw new Error(
+        "Alguno de los equipos no cumple con el cupo válido de jugadores. El partido no puede programarse."
+      );
+    }
+
     this.partidos.push(partido);
   }
 
